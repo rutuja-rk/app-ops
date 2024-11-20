@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #6a0dad, #d4a1f4);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      text-align: center;
+      color: #ffd1dc;
+      text-shadow: 2px 2px 4px #4b0082;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+      color: #e8daef;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    .task-tracker {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    input[type="text"] {
+      width: calc(100% - 50px);
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    button.add-task {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background: #8a2be2;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.add-task:hover {
+      background: #6a0dad;
+    }
+
+    ul.task-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    ul.task-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4b0082;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #ffd1dc;
+    }
+
+    ul.task-list li .remove-task {
+      color: #ff6f91;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    ul.task-list li .remove-task:hover {
+      color: #ff1744;
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: #ffd1dc;
+      text-align: center;
+      padding: 10px;
+    }
+
+    footer a {
+      color: #e8daef;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <div class="task-tracker">
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Enter your task...">
+      <button class="add-task" onclick="addTask()">Add</button>
+    </div>
+    <ul class="task-list" id="taskList">
+      <!-- Tasks will be dynamically added here -->
+    </ul>
+  </div>
+  <footer>
+    Made with 💜</a>
+  </footer>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const taskList = document.getElementById('taskList');
+
+      const taskText = taskInput.value.trim();
+      if (taskText === '') {
+        alert('Please enter a task!');
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.innerHTML = `${taskText} <span class="remove-task" onclick="removeTask(this)">×</span>`;
+      taskList.appendChild(li);
+
+      taskInput.value = '';
+    }
+
+    function removeTask(element) {
+      const taskList = document.getElementById('taskList');
+      taskList.removeChild(element.parentElement);
+    }
+  </script>
+</body>
+</html>
