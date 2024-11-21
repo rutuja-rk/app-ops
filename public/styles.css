@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #6a0dad, #d4a1f4);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  .task-tracker {
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  input {
+    width: 70%;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #4b0082;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  

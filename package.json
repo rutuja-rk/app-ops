@@ -1,0 +1,13 @@
+{
+    "name": "task-tracker-app",
+    "version": "1.0.0",
+    "description": "A simple task tracker app with Node.js and Docker",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
